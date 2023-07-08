@@ -48,9 +48,11 @@ describe Author do
       author = Author.new("Jay Z")
       magazine_1 = Magazine.new("Magazine_1", "Category_1")
       magazine_2 = Magazine.new("Magazine_2", "Category_2")
+      magazine_3 = Magazine.new("Magazine_3", "Category_2")
 
       Article.new(author, magazine_1, "Article 3")
       Article.new(author, magazine_2, "Article 4")
+      Article.new(author, magazine_3, "Article 5")
 
       expect(author.topic_areas).to contain_exactly("Category_1", "Category_2")
     end
