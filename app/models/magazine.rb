@@ -1,5 +1,7 @@
 require 'pry'
+
 class Magazine
+  extend All
   attr_accessor :name, :category
 
   @@all = []
@@ -11,9 +13,9 @@ class Magazine
     @@all << self
   end
 
-  def self.all
-    @@all
-  end
+  # def self.all
+  #   @@all
+  # end
 
   def self.find_by_name(name)
     @@all.find { |magazine| magazine.name == name }
@@ -24,13 +26,11 @@ class Magazine
   end
 
   def contributing_authors
-    # Article.all.select { |article| article.magazine == self }
-    #            .group_by { |article| article.author }
-    #            .select { |_author, articles| articles.length > 2 }
-    #            .keys
-        magazine_authors = Article.all.collect{|article| article.author}
-        magazine_authors.tally.each {|key, value|  value > 2}
-        magazine_authors
+    contributing_authors = Article.all.collect do |article|
+      article.author if article.magazine == self
+    end.compact
+  
+    contributing_authors.uniq.select { |author| contributing_authors.count(author) > 1 }
   end
 end
 

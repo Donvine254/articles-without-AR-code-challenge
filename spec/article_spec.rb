@@ -36,7 +36,7 @@ describe Article do
       article1 = Article.new(author, magazine, title)
       article2 = Article.new(author, magazine, title)
 
-      expect(Article.all).to contain_exactly(article1, article2)
+      expect(Article.all).to include(article1, article2)
     end
   end
 

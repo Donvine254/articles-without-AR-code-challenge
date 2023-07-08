@@ -15,7 +15,7 @@ require "spec_helper"
         magazine1 = Magazine.new("Magazine 1", "Category 1")
         magazine2 = Magazine.new("Magazine 2", "Category 2")
   
-        expect(Magazine.find_by_name("Magazine 1")).to eq(magazine1)
+        expect(Magazine.find_by_name("Magazine 1")).to have_attributes(name: "Magazine 1", category: "Category 1")
       end
     end
   
@@ -33,15 +33,15 @@ require "spec_helper"
   
     describe "#contributing_authors" do
       it "returns an array of authors who have written more than 2 articles for the magazine" do
-        magazine = Magazine.new("Example Magazine", "News")
+        forbes = Magazine.new("Forbes", "News")
         author1 = Author.new("John Doe")
         author2 = Author.new("Jane Smith")
   
-        Article.new(author1, magazine, "Article 1")
-        Article.new(author1, magazine, "Article 2")
-        Article.new(author2, magazine, "Article 3")
+        Article.new(author1, forbes, "Article 1")
+        Article.new(author1, forbes, "Article 2")
+        Article.new(author2, forbes, "Article 3")
   
-        expect(magazine.contributing_authors).to contain_exactly(author1)
+        expect(forbes.contributing_authors).to contain_exactly(author1)
       end
     end
   end

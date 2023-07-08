@@ -20,15 +20,15 @@ describe Author do
 
   describe "#magazines" do
     it "returns a unique array of Magazine instances the author has contributed to" do
-      author = Author.new("John Doe")
+      author_1 = Author.new("example author")
       magazine1 = Magazine.new("Magazine 1", "Category 1")
       magazine2 = Magazine.new("Magazine 2", "Category 2")
 
-      Article.new(author, magazine1, "Article_1")
-      Article.new(author, magazine2, "Article_2")
-      Article.new(author, magazine2, "Article_3")
+      Article.new(author_1, magazine1, "Article_1")
+      Article.new(author_1, magazine2, "Article_2")
+      Article.new(author_1, magazine2, "Article_3")
 
-      expect(author.magazines).to contain_exactly(magazine1, magazine2)
+      expect(author_1.magazines).to contain_exactly(magazine1, magazine2)
     end
   end
 

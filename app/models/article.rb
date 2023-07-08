@@ -1,5 +1,6 @@
 require "pry"
 class Article
+   extend All
     attr_reader :author, :magazine, :title
   
     @@all = []
@@ -11,9 +12,9 @@ class Article
       @@all << self
     end
   
-    def self.all
-      @@all
-    end
+    # def self.all 
+    #   @@all
+    # end
   end
   
 
