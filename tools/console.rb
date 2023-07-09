@@ -26,6 +26,9 @@ jim.add_article(playboy,"casting calls")
 
 pp Magazine.all
 pp Article.all
+puts james
+puts playboy
+puts art1
 puts james.topic_areas
 puts james.magazines
 puts james.articles

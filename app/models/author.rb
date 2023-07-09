@@ -4,6 +4,9 @@ class Author
   def initialize(name)
     @name = name
   end
+  def to_s
+    @name
+  end
 
   def articles
     Article.all.select { |article| article.author.name == self.name }

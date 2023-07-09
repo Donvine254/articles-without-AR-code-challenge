@@ -15,6 +15,9 @@ class Article
     # def self.all 
     #   @@all
     # end
+    def to_s
+      "Author: #{author}  , Title: #{title}, Magazine: #{magazine}"
+    end
   end
   
 

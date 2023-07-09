@@ -16,6 +16,9 @@ class Magazine
   # def self.all
   #   @@all
   # end
+  def to_s
+    "Name: #{name}  , Category: #{category}"
+  end
 
   def self.find_by_name(name)
     @@all.find { |magazine| magazine.name == name }
