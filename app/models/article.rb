@@ -3,13 +3,13 @@ class Article
    extend All
     attr_reader :author, :magazine, :title
   
-    @@all = []
+    # @@all = []
   
     def initialize(author, magazine, title)
       @author = author
       @magazine = magazine
       @title = title
-      @@all << self
+      # @@all << self
     end
   
     # def self.all 
